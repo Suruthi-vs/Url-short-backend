@@ -113,7 +113,7 @@ userroute.get("/activate/:token", (req, res) => {
           if (user) {
             //------------ User already exists ------------//
             res.send({ msg: "Email ID already registered! Please log in." });
-            res.redirect("https://csb-ydibz.netlify.app")
+            res.redirect("/login");
           } else {
             const newUser = new User({
               Firstname,
@@ -129,8 +129,7 @@ userroute.get("/activate/:token", (req, res) => {
                 newUser
                   .save()
                   .then((user) => {
-                     res.status(200).json({ status: "success" });
-                    //res.send(res.redirect("https://csb-ydibz.netlify.app/login"));
+                    res.send(res.redirect("https://ydibz.csb.app/login"));
                     // res.redirect('https://ydibz.csb.app/login');
                   })
                   .catch((err) => console.log(err));
@@ -190,7 +189,7 @@ userroute.post("/forgot", (req, res) => {
         expiresIn: "3 hours"
       });
       
-      const CLIENT_URL = "https://csb-ydibz.netlify.app"
+      const CLIENT_URL = "https://url-shotner-guvi.herokuapp.com"
       const output = `
                 <h2>Please click on below link to activate your account</h2>
                 <p>${CLIENT_URL}/forgot/${token}</p>
@@ -276,7 +275,7 @@ userroute.get("/forgot/:token", (req, res) => {
                 "User with this email Id does not exist. Please try again Later"
             });
           } else {
-            res.redirect("https://csb-ydibz.netlify.app/reset");
+            res.redirect("https://ydibz.csb.app/reset");
           }
         });
       }
