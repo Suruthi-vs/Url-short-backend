@@ -40,7 +40,7 @@ userroute.post("/register", (req, res) => {
         { expiresIn: "3 hours" }
       );
       
-      const CLIENT_URL = "https://csb-ydibz.netlify.app"
+      const CLIENT_URL = "https://url-shotner-guvi.herokuapp.com"
       const output = `
                 <h2>Please click on below link to activate your account</h2>
                 <p>${CLIENT_URL}/activate/${token}</p>
@@ -113,7 +113,7 @@ userroute.get("/activate/:token", (req, res) => {
           if (user) {
             //------------ User already exists ------------//
             res.send({ msg: "Email ID already registered! Please log in." });
-            res.redirect("https://csb-ydibz.netlify.app/login")
+            res.redirect("https://csb-ydibz.netlify.app")
           } else {
             const newUser = new User({
               Firstname,
