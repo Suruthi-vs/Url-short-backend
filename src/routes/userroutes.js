@@ -43,7 +43,7 @@ userroute.post("/register", (req, res) => {
       const CLIENT_URL = "https://url-shotner-guvi.herokuapp.com"
       const output = `
                 <h2>Please click on below link to activate your account</h2>
-                <p>${CLIENT_URL}/forgot/${token}</p>
+                <p>${CLIENT_URL}/activate/${token}</p>
                 <p><b>NOTE: </b> The above activation link expires in 30 minutes.</p>
                 `;
       const oauth2Client = new OAuth2(
