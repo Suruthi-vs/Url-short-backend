@@ -40,7 +40,7 @@ userroute.post("/register", (req, res) => {
         { expiresIn: "3 hours" }
       );
       
-      const CLIENT_URL = "https://upbjz.sse.codesandbox.io"
+      const CLIENT_URL = "https://url-shotner-guvi.herokuapp.com"
       const output = `
                 <h2>Please click on below link to activate your account</h2>
                 <p>${CLIENT_URL}/forgot/${token}</p>
@@ -129,7 +129,7 @@ userroute.get("/activate/:token", (req, res) => {
                 newUser
                   .save()
                   .then((user) => {
-                    res.send(res.redirect("https://ydibz.csb.app/login"));
+                    res.send(res.redirect("https://csb-ydibz.netlify.app/login"));
                     // res.redirect('https://ydibz.csb.app/login');
                   })
                   .catch((err) => console.log(err));
@@ -189,7 +189,7 @@ userroute.post("/forgot", (req, res) => {
         expiresIn: "3 hours"
       });
       
-      const CLIENT_URL = "https://upbjz.sse.codesandbox.io"
+      const CLIENT_URL = "https://url-shotner-guvi.herokuapp.com"
       const output = `
                 <h2>Please click on below link to activate your account</h2>
                 <p>${CLIENT_URL}/forgot/${token}</p>
@@ -275,7 +275,7 @@ userroute.get("/forgot/:token", (req, res) => {
                 "User with this email Id does not exist. Please try again Later"
             });
           } else {
-            res.redirect("https://ydibz.csb.app/reset");
+            res.redirect("https://csb-ydibz.netlify.app/reset");
           }
         });
       }
